@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoLux - Concesionario Premium</title>
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">Auto<span>Lux</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero" class="active">Inicio</a></li>
+                    <li><a href="modelo.html">Modelos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="#location">Ubicación</a></li>
+                </ul>
+            </nav>
+            <div id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section con Video -->
+    <section id="hero">
+        <div class="hero-video">
+            <video id="background-video" autoplay muted loop playsinline>
+                <source src="img/video_portada.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="container">
+            <div class="hero-content reveal">
+                <div class="hero-subtitle">Experiencia en automóviles de lujo</div>
+                <h1>Descubre la excelencia en cada detalle</h1>
+                <p>Somos especialistas en vehículos de alta gama con las mejores opciones de financiamiento y servicio post-venta garantizado.</p>
+                <div class="hero-cta">
+                    <a href="modelo.html" class="btn btn-primary">Ver modelos</a>
+                    <a href="#contact" class="btn btn-outline">Contáctanos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title centered">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Venta de Vehículos</h3>
+                    <p>Amplia selección de automóviles de lujo nuevos y seminuevos certificados con garantía extendida.</p>
+                </div>
+                <div class="service-card reveal delay-200">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Servicio Técnico</h3>
+                    <p>Mantenimiento especializado con técnicos certificados y equipamiento de última generación.</p>
+                </div>
+                <div class="service-card reveal delay-400">
+                    <div class="service-icon">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                    <h3>Financiamiento</h3>
+                    <p>Opciones flexibles de financiamiento con las mejores tasas del mercado y aprobación rápida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modelos Destacados -->
+    <section id="models">
+        <div class="container">
+            <h2 class="section-title centered">Modelos Destacados</h2>
+            <div class="models-grid">
+                <div class="model-card reveal">
+                    <div class="model-img">
+                        <img src="img/tesla en 3d.png" alt="Tesla Model 3">
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-name">Tesla Model 3</h3>
+                        <div class="model-price">Desde $45,000</div>
+                        <ul class="model-features">
+                            <li><i class="fas fa-check"></i> Motor eléctrico 480 HP</li>
+                            <li><i class="fas fa-check"></i> 0-100 km/h en 3.2s</li>
+                            <li><i class="fas fa-check"></i> Autonomía de 560 km</li>
+                            <li><i class="fas fa-check"></i> Piloto automático avanzado</li>
+                        </ul>
+                        <a href="model03.html" class="btn btn-primary model-btn">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="model-card reveal delay-200">
+                    <div class="model-img">
+                        <img src="img/Tesla Model Y.png" alt="Tesla Model Y">
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-name">Tesla Model Y</h3>
+                        <div class="model-price">Desde $55,000</div>
+                        <ul class="model-features">
+                            <li><i class="fas fa-check"></i> SUV eléctrico compacto</li>
+                            <li><i class="fas fa-check"></i> Hasta 7 plazas disponibles</li>
+                            <li><i class="fas fa-check"></i> Autonomía de 525 km</li>
+                            <li><i class="fas fa-check"></i> Tracción integral dual-motor</li>
+                        </ul>
+                        <a href="model-y.html" class="btn btn-primary model-btn">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="model-card reveal delay-400">
+                    <div class="model-img">
+                        <img src="img/porcht.png" alt="Porsche 911">
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-name">Porsche 911 Turbo S</h3>
+                        <div class="model-price">Desde $185,000</div>
+                        <ul class="model-features">
+                            <li><i class="fas fa-check"></i> Motor Bóxer 6 cilindros Turbo</li>
+                            <li><i class="fas fa-check"></i> 0-100 km/h en 2.8s</li>
+                            <li><i class="fas fa-check"></i> 650 HP de potencia</li>
+                            <li><i class="fas fa-check"></i> Tracción integral inteligente</li>
+                        </ul>
+                        <a href="porsche-911.html" class="btn btn-primary model-btn">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <div class="counter-value" data-count="15">0</div>
+                    <div class="stat-title">Años de Experiencia</div>
+                </div>
+                <div class="stat-item reveal delay-200">
+                    <div class="counter-value" data-count="2500">0</div>
+                    <div class="stat-title">Clientes Satisfechos</div>
+                </div>
+                <div class="stat-item reveal delay-400">
+                    <div class="counter-value" data-count="150">0</div>
+                    <div class="stat-title">Vehículos Disponibles</div>
+                </div>
+                <div class="stat-item reveal delay-600">
+                    <div class="counter-value" data-count="12">0</div>
+                    <div class="stat-title">Premios Recibidos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="section-title centered">Experiencias de Clientes</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-item active">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>La atención personalizada y el servicio de primera clase hacen de AutoLux una experiencia inolvidable. Mi nuevo SUV supera todas mis expectativas en rendimiento y confort.</p>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="img/client-1.jpg" alt="Cliente 1">
+                        </div>
+                        <div class="client-name">Carlos Martínez</div>
+                        <div class="client-role">Empresario</div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>El proceso de compra fue rápido y transparente. El asesoramiento financiero me permitió conseguir las mejores condiciones para la adquisición de mi automóvil de ensueño.</p>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="img/client-2.jpg" alt="Cliente 2">
+                        </div>
+                        <div class="client-name">Laura González</div>
+                        <div class="client-role">Arquitecta</div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p>El servicio postventa de AutoLux es excepcional. Siempre están disponibles para responder mis consultas y el mantenimiento de mi vehículo es impecable. Altamente recomendable.</p>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <img src="img/client-3.jpg" alt="Cliente 3">
+                        </div>
+                        <div class="client-name">Miguel Torres</div>
+                        <div class="client-role">Médico</div>
+                    </div>
+                </div>
+                <div class="carousel-indicators">
+                    <div class="indicator active" data-slide="0"></div>
+                    <div class="indicator" data-slide="1"></div>
+                    <div class="indicator" data-slide="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title centered">Ponte en Contacto</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Dirección</h4>
+                            <p>Av. Principal 1250, Sector Exclusivo<br>Ciudad Metropolitana</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Teléfono</h4>
+                            <p>+1 (555) 123-4567</p>
+                            <p>+1 (555) 987-6543</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>info@autolux.com</p>
+                            <p>ventas@autolux.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Horario de Atención</h4>
+                            <ul class="hours-list">
+                                <li><span>Lunes - Viernes:</span> <span>9:00 AM - 8:00 PM</span></li>
+                                <li><span>Sábado:</span> <span>10:00 AM - 6:00 PM</span></li>
+                                <li><span>Domingo:</span> <span>Cerrado</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <span class="error-message"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                    <div id="successMessage" class="success-message" style="display: none;">
+                        ¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ubicación/Mapa -->
+    <section id="location">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.952912260219!2d-79.9023375846808!3d-2.170463137932408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwMTAnMTMuNyJTIDc5wrA1NCcwMi4wIlc!5e0!3m2!1ses!2sec!4v1625678901234!5m2!1ses!2sec" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">Auto<span>Lux</span></a>
+                    <p>Con más de 15 años de experiencia, nos dedicamos a ofrecer los mejores vehículos de lujo y un servicio excepcional a nuestros clientes.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title">Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#hero">Inicio</a></li>
+                        <li><a href="#services">Servicios</a></li>
+                        <li><a href="#models">Modelos</a></li>
+                        <li><a href="#testimonials">Testimonios</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3 class="footer-title">Servicios</h3>
+                    <ul>
+                        <li><a href="#">Venta de Vehículos</a></li>
+                        <li><a href="#">Financiamiento</a></li>
+                        <li><a href="#">Servicio Técnico</a></li>
+                        <li><a href="#">Repuestos Originales</a></li>
+                        <li><a href="#">Garantía Extendida</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <p>Suscríbete para recibir las últimas novedades y ofertas especiales.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AutoLux. Todos los derechos reservados. Diseñado con <i class="fas fa-heart"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón de volver arriba -->
+    <button class="scroll-top-btn" id="scrollTopBtn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html> 
