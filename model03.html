@@ -335,6 +335,125 @@
                 width: 280px;
             }
         }
+
+        .btn-sm {
+            padding: 8px 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Estilos para el grid de características */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        
+        .feature-card {
+            background-color: rgba(25, 25, 25, 0.9);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+            color: var(--light-text);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover .feature-icon {
+            background-color: var(--primary-color);
+            transform: scale(1.1);
+        }
+        
+        .feature-card h3 {
+            color: var(--light-text);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .feature-details {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            padding: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .feature-card:hover .feature-details {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .feature-details h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .feature-details ul {
+            text-align: left;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-details li {
+            color: var(--light-text);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .feature-details li i {
+            color: var(--secondary-color);
+            margin-right: 0.8rem;
+        }
+        
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+            }
+            
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -360,12 +479,9 @@
     <section class="modelo-hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-subtitle">Rendimiento y tecnología</div>
                 <h1>Tesla Model 3</h1>
-                <p>Descubre la experiencia de conducción eléctrica más avanzada con autonomía superior y aceleración impresionante.</p>
                 <div class="hero-cta">
-                    <a href="#contacto" class="btn btn-primary">Solicitar prueba de manejo</a>
-                    <a href="#galeria" class="btn btn-outline">Ver galería</a>
+                    <a href="#contacto" class="btn btn-primary btn-sm">Prueba tu Tesla Model 3</a>
                 </div>
             </div>
         </div>
@@ -375,107 +491,65 @@
     <section class="modelo-content">
         <div class="container">
             <!-- Indicadores interactivos -->
-            <div class="spec-indicators">
-                <div class="indicator">
-                    <div class="indicator-icon">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
                         <i class="fas fa-bolt"></i>
                     </div>
-                    <div class="indicator-name">Rendimiento</div>
-                    <div class="indicator-tooltip">
-                        <div class="tooltip-content">
-                            <h4>Rendimiento excepcional</h4>
-                            <p>El Tesla Model 3 ofrece una aceleración de 0 a 100 km/h en solo 3.2 segundos, con una potencia de 480 HP y tracción integral dual-motor que garantiza un agarre excepcional en cualquier condición de conducción.</p>
-                            <ul>
-                                <li><i class="fas fa-check"></i> Motor eléctrico dual (AWD): 480 HP</li>
-                                <li><i class="fas fa-check"></i> Torque: 639 Nm para respuesta inmediata</li>
-                                <li><i class="fas fa-check"></i> Velocidad máxima: 261 km/h</li>
-                                <li><i class="fas fa-check"></i> Autonomía: 560 km con una sola carga</li>
-                                <li><i class="fas fa-check"></i> Batería de 75 kWh de alta densidad</li>
-                                <li><i class="fas fa-check"></i> Carga rápida: hasta 275 km en 15 minutos</li>
-                            </ul>
-                        </div>
+                    <h3>Rendimiento</h3>
+                    <div class="feature-details">
+                        <h4>Rendimiento excepcional</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 0-100 km/h en 3.2s</li>
+                            <li><i class="fas fa-check"></i> 480 HP</li>
+                            <li><i class="fas fa-check"></i> Autonomía: 560 km</li>
+                            <li><i class="fas fa-check"></i> Velocidad máx: 261 km/h</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="indicator">
-                    <div class="indicator-icon">
+                <div class="feature-card">
+                    <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <div class="indicator-name">Seguridad</div>
-                    <div class="indicator-tooltip">
-                        <div class="tooltip-content">
-                            <h4>Seguridad avanzada</h4>
-                            <p>El Tesla Model 3 cuenta con la máxima puntuación de 5 estrellas en todas las categorías de pruebas de choque. Su diseño y tecnología lo convierten en uno de los vehículos más seguros jamás fabricados.</p>
-                            <ul>
-                                <li><i class="fas fa-check"></i> 8 airbags de serie para protección integral</li>
-                                <li><i class="fas fa-check"></i> Prevención activa de colisiones con detección de peatones</li>
-                                <li><i class="fas fa-check"></i> Frenado automático de emergencia</li>
-                                <li><i class="fas fa-check"></i> Estructura reforzada de acero y aluminio</li>
-                                <li><i class="fas fa-check"></i> Asistente de mantenimiento de carril</li>
-                                <li><i class="fas fa-check"></i> Autopilot básico incluido de serie</li>
-                                <li><i class="fas fa-check"></i> Modo Centinela con cámaras de vigilancia 360°</li>
-                            </ul>
-                        </div>
+                    <h3>Seguridad</h3>
+                    <div class="feature-details">
+                        <h4>Seguridad avanzada</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 8 airbags</li>
+                            <li><i class="fas fa-check"></i> Autopilot incluido</li>
+                            <li><i class="fas fa-check"></i> Frenado automático</li>
+                            <li><i class="fas fa-check"></i> Modo Centinela</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="indicator">
-                    <div class="indicator-icon">
+                <div class="feature-card">
+                    <div class="feature-icon">
                         <i class="fas fa-laptop"></i>
                     </div>
-                    <div class="indicator-name">Tecnología</div>
-                    <div class="indicator-tooltip">
-                        <div class="tooltip-content">
-                            <h4>Tecnología de vanguardia</h4>
-                            <p>La pantalla táctil central de 15" controla prácticamente todas las funciones del vehículo. El sistema operativo recibe actualizaciones regulares inalámbricas (OTA) que mejoran las capacidades del vehículo con el tiempo.</p>
-                            <ul>
-                                <li><i class="fas fa-check"></i> Pantalla táctil de 15" con interfaz intuitiva</li>
-                                <li><i class="fas fa-check"></i> Actualizaciones OTA continuas y gratuitas</li>
-                                <li><i class="fas fa-check"></i> Mapas con tráfico en tiempo real y navegación adaptativa</li>
-                                <li><i class="fas fa-check"></i> Streaming multimedia integrado (Spotify, Netflix, YouTube)</li>
-                                <li><i class="fas fa-check"></i> Control total del vehículo desde la aplicación móvil</li>
-                                <li><i class="fas fa-check"></i> Conducción autónoma básica incluida con posibilidad de FSD</li>
-                            </ul>
-                        </div>
+                    <h3>Tecnología</h3>
+                    <div class="feature-details">
+                        <h4>Tecnología de vanguardia</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Pantalla táctil 15"</li>
+                            <li><i class="fas fa-check"></i> Actualizaciones OTA</li>
+                            <li><i class="fas fa-check"></i> Control por app</li>
+                            <li><i class="fas fa-check"></i> Streaming integrado</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="indicator">
-                    <div class="indicator-icon">
+                <div class="feature-card">
+                    <div class="feature-icon">
                         <i class="fas fa-couch"></i>
                     </div>
-                    <div class="indicator-name">Confort</div>
-                    <div class="indicator-tooltip">
-                        <div class="tooltip-content">
-                            <h4>Interior premium</h4>
-                            <p>El diseño minimalista del interior maximiza el espacio y la comodidad. El techo panorámico de cristal crea una sensación de amplitud incomparable y proporciona una vista extraordinaria.</p>
-                            <ul>
-                                <li><i class="fas fa-check"></i> Techo panorámico de cristal con protección UV e IR</li>
-                                <li><i class="fas fa-check"></i> Asientos veganos premium con calefacción</li>
-                                <li><i class="fas fa-check"></i> Sistema de audio premium de 14 altavoces</li>
-                                <li><i class="fas fa-check"></i> Climatización dual con filtro HEPA y modo Bioweapon Defense</li>
-                                <li><i class="fas fa-check"></i> Doble maletero (delantero y trasero) con 542L de capacidad total</li>
-                                <li><i class="fas fa-check"></i> Asientos traseros abatibles 60/40</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="indicator">
-                    <div class="indicator-icon">
-                        <i class="fas fa-info-circle"></i>
-                    </div>
-                    <div class="indicator-name">Descripción</div>
-                    <div class="indicator-tooltip">
-                        <div class="tooltip-content">
-                            <h4>Diseño minimalista y funcional</h4>
-                            <p>El Tesla Model 3 redefine el concepto de automóvil con un diseño elegante y aerodinámico que maximiza la eficiencia y el rendimiento. Su estética minimalista se combina con materiales de primera calidad para ofrecer una experiencia de conducción premium.</p>
-                            <ul>
-                                <li><i class="fas fa-check"></i> Ausencia de parrilla frontal para mejor aerodinámica</li>
-                                <li><i class="fas fa-check"></i> Manijas de puertas aerodinámicas integradas</li>
-                                <li><i class="fas fa-check"></i> Diseño interior sin botones físicos para mayor limpieza visual</li>
-                                <li><i class="fas fa-check"></i> Coeficiente aerodinámico de solo 0.23 Cd</li>
-                                <li><i class="fas fa-check"></i> Frontal bajo que mejora la visibilidad</li>
-                                <li><i class="fas fa-check"></i> Fabricación sostenible con materiales reciclados</li>
-                                <li><i class="fas fa-check"></i> Interior espacioso gracias a la ausencia de túnel de transmisión</li>
-                            </ul>
-                        </div>
+                    <h3>Confort</h3>
+                    <div class="feature-details">
+                        <h4>Interior premium</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Techo panorámico</li>
+                            <li><i class="fas fa-check"></i> Audio premium</li>
+                            <li><i class="fas fa-check"></i> Climatización dual</li>
+                            <li><i class="fas fa-check"></i> 542L maletero</li>
+                        </ul>
                     </div>
                 </div>
             </div>

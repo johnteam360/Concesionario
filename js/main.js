@@ -2,7 +2,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Variables
     const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
+    const navLinks = document.querySelector('.nav-links');
+    const menuOverlay = document.getElementById('menu-overlay');
     const header = document.getElementById('header');
     const contactForm = document.getElementById('contactForm');
     const scrollTopBtn = document.createElement('button');
@@ -17,6 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             menuToggle.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+    }
+    
+    // Cerrar el menú al hacer clic en el overlay
+    if (menuOverlay) {
+        menuOverlay.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.classList.remove('no-scroll');
         });
     }
     
@@ -25,6 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
             menuToggle.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.classList.remove('no-scroll');
         });
     });
     

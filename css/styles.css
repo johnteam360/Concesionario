@@ -222,12 +222,14 @@ header {
     z-index: 1000;
     padding: 20px 0;
     transition: var(--transition);
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
 }
 
 header.scrolled {
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    padding: 15px 0;
 }
 
 .header-container {
@@ -237,43 +239,49 @@ header.scrolled {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--light-text);
     font-family: 'Playfair Display', serif;
     display: flex;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 5px;
+    letter-spacing: 1px;
 }
 
 header.scrolled .logo {
-    color: var(--primary-color);
+    color: var(--light-text);
 }
 
 .logo span {
     color: var(--secondary-color);
+    margin-left: 2px;
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .nav-links a {
     color: var(--light-text);
     font-weight: 500;
     position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    padding: 5px 0;
 }
 
 header.scrolled .nav-links a {
-    color: var(--dark-text);
+    color: var(--light-text);
 }
 
 .nav-links a::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -5px;
+    bottom: 0;
     width: 0;
     height: 2px;
     background-color: var(--secondary-color);
@@ -294,10 +302,11 @@ header.scrolled .nav-links a {
     font-size: 1.5rem;
     color: var(--light-text);
     cursor: pointer;
+    transition: var(--transition);
 }
 
 header.scrolled #menu-toggle {
-    color: var(--dark-text);
+    color: var(--light-text);
 }
 
 /* Hero Section */
@@ -308,7 +317,7 @@ header.scrolled #menu-toggle {
     align-items: center;
     overflow: hidden;
     margin-bottom: 0;
-    padding: 0;
+    padding: 80px 0 0;
 }
 
 .hero-video {
@@ -341,6 +350,7 @@ header.scrolled #menu-toggle {
     z-index: 2;
     color: var(--light-text);
     max-width: 800px;
+    padding-top: 60px;
 }
 
 .hero-subtitle {
@@ -975,47 +985,154 @@ footer::before {
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.3rem;
+        font-size: 2.2rem;
     }
     
+    /* Estilos del encabezado móvil */
+    header {
+        padding: 15px 0;
+        background-color: rgba(0, 0, 0, 0.95);
+    }
+    
+    .header-container {
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        font-size: 1.8rem;
+    }
+    
+    /* Menú móvil mejorado */
     #menu-toggle {
         display: block;
+        cursor: pointer;
+        z-index: 1000;
+        position: relative;
+        font-size: 1.5rem;
+        color: var(--light-text);
+        transition: var(--transition);
+    }
+    
+    #menu-toggle.active i {
+        transform: rotate(90deg);
     }
     
     .nav-links {
         position: fixed;
         top: 0;
-        right: -300px;
-        width: 280px;
+        right: -100%;
+        width: 75%;
         height: 100vh;
-        background-color: var(--dark-bg);
+        background-color: rgba(0, 0, 0, 0.98);
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 80px 30px 30px;
-        transition: var(--transition);
+        justify-content: center;
+        align-items: center;
         z-index: 999;
+        transition: right 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     .nav-links.active {
         right: 0;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
     }
     
-    #menu-toggle.active {
+    .nav-links li {
+        margin: 1.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+        display: block;
+        color: var(--light-text);
+        transition: var(--transition);
+        position: relative;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 50%;
+        background-color: var(--secondary-color);
+        transition: var(--transition);
+        transform: translateX(-50%);
+    }
+    
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+        width: 50px;
+    }
+    
+    .nav-links a:hover {
+        color: var(--secondary-color);
+    }
+    
+    /* Overlay para menú móvil */
+    .overlay {
         position: fixed;
-        right: 20px;
-        top: 20px;
-        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 998;
+        display: none;
+        transition: var(--transition);
+        backdrop-filter: blur(5px);
+    }
+    
+    .overlay.active {
+        display: block;
+    }
+    
+    /* Mejoras adicionales para móvil */
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .hero-content {
+        padding: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
     }
     
     .hero-cta {
         flex-direction: column;
-        gap: 1rem;
+        align-items: center;
     }
     
     .hero-cta .btn {
+        margin: 0.5rem 0;
         width: 100%;
         text-align: center;
+    }
+    
+    .services-grid,
+    .models-grid,
+    .stats-grid,
+    .contact-wrapper,
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 }
 
@@ -1025,32 +1142,23 @@ footer::before {
     }
     
     h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
     
-    .hero-subtitle {
-        font-size: 1rem;
+    .logo {
+        font-size: 1.5rem;
     }
     
-    section {
-        padding: 50px 0;
+    .nav-links {
+        width: 85%;
     }
     
-    .footer-content {
-        grid-template-columns: 1fr;
+    .section-title {
+        margin-bottom: 30px;
     }
-    
-    .newsletter-form {
-        flex-direction: column;
-    }
-    
-    .newsletter-form input,
-    .newsletter-form button {
-        width: 100%;
-        border-radius: var(--border-radius);
-    }
-    
-    .newsletter-form input {
-        margin-bottom: 0.5rem;
-    }
+}
+
+/* Utilitarios */
+.no-scroll {
+    overflow: hidden;
 } 
